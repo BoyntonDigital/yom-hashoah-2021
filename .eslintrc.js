@@ -54,6 +54,7 @@ module.exports = {
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
     '@typescript-eslint/camelcase': 'off',
+    'semi': ['error', 'never'],
     quotes: ['error', 'single']
   },
   overrides: [{
@@ -64,6 +65,12 @@ module.exports = {
     ],
     rules: {
       'import/no-default-export': 'off'
+    }
+  },
+  {
+    files: ['**/test.*'],
+    rules: {
+      'no-undef': 0
     }
   }]
 };

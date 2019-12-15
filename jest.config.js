@@ -23,7 +23,7 @@ module.exports = {
         }
       },
       testMatch: [
-        '<rootDir>/{src,pages}/**/*.test.{ts,tsx,js,jsx}'
+        '<rootDir>/{src,pages}/**/test.{ts,tsx,js,jsx}'
       ],
       setupFilesAfterEnv: [
         './test/jest-setup.ts'
