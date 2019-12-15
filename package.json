@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "description": "For the Charleston Jewish Federation",
   "keywords": [],
-  "homepage": "https://github.com/RobertoMSousa/gatsby-typescript-storybook-starter",
+  "homepage": "https://github.com/BoyntonDigital/yom-hashoah-2021",
   "license": "MIT",
   "author": {
-    "name": "Boynton Digital",
+    "name": "Boynton Digital"
   },
   "files": [],
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/BoyntonDigital/yom-hashoah-2021"
   },
   "scripts": {
     "develop": "gatsby develop",
@@ -23,14 +23,19 @@
     "build": "npm run build:gatsby && npm run build:storybook",
     "build:gatsby": "gatsby build",
     "build:storybook": "build-storybook -c .storybook -o public/docs",
-    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "lint:fix": "npx eslint --fix \"**/*.{ts,tsx,js}\"",
+    "lint": "npx eslint \"**/*.{ts,tsx,js}\"",
+    "test": "npm run lint:fix && npm run lint && npx jest --passWithNoTests",
+    "test:unit:watch:all": "npx jest --watchAll",
+    "test:unit:watch": "npx jest --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.0.20",
-    "@mdx-js/react": "^1.0.20",
-    "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.15.15",
     "gatsby-image": "^2.2.19",
     "gatsby-mdx": "^0.6.3",
@@ -42,8 +47,6 @@
     "gatsby-plugin-typescript": "^2.1.7",
     "gatsby-source-filesystem": "^2.1.22",
     "gatsby-transformer-sharp": "^2.2.14",
-    "polished": "^3.4.0",
-    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
@@ -57,6 +60,7 @@
     "@storybook/addon-options": "5.0.11",
     "@storybook/addon-viewport": "5.0.11",
     "@storybook/react": "^5.2.5",
+    "@testing-library/jest-dom": "^4.2.4",
     "@types/react-helmet": "^5.0.13",
     "@types/storybook__addon-info": "^4.1.2",
     "@types/storybook__react": "^4.0.2",
@@ -65,6 +69,7 @@
     "@typescript-eslint/parser": "^2.2.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
     "eslint": "^6.4.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.3.0",
@@ -75,8 +80,8 @@
     "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
-    "prettier": "^1.18.2",
-    "react-markdown": "^4.0.8",
+    "husky": "^3.1.0",
+    "ts-jest": "^24.2.0",
     "typescript": "^3.6.3"
   }
 }
