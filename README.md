@@ -1,5 +1,12 @@
 # Boynton Gatsby Boilerplate
 
+## Handy Commands
+* `gatsby develop` start development server to look at pages
+* `npm run storybook` start storybook
+* `npm run test` run tests
+* `npm run lint` checking linting
+* `npm run lint:fix` fix linting
+
 ## Tech Stack
 
 * Component Driven Design - [Storybook](https://storybook.js.org/docs/formats/storiesof-api/)
