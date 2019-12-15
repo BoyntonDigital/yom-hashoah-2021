@@ -1,13 +1,10 @@
 import React from 'react';
 
-import ResetStyle from '../../src/components/Reset';
+import { GlobalStyle } from '../../src/styles/globalStyle';
 
-const GlobalStyleDecorator = storyFn => (
+export const GlobalStyleDecorator = storyFn => (
   <>
-    <ResetStyle />
-
-    <div style={{ padding: '1rem' }}>{storyFn()}</div>
+    <GlobalStyle />
+    {storyFn()}
   </>
 );
-
-export default GlobalStyleDecorator;
