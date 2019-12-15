@@ -1,9 +1,5 @@
 import React from 'react';
 import { Header } from './'
+import { storiesOf } from '@storybook/react';
 
-export default {
-  component: Header,
-  title: 'Header'
-}
-
-export const main = () => <Header />
+storiesOf('Header', module).add('Main', () => <Header />)

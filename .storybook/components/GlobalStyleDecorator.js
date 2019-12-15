@@ -1,12 +1,10 @@
 import React from 'react';
 
-import GlobalStyles from '../../src/styles/GlobalStyles';
+import { GlobalStyle } from '../../src/styles/globalStyle';
 
-const GlobalStyleDecorator = storyFn => (
+export const GlobalStyleDecorator = storyFn => (
   <>
-    <GlobalStyles />
+    <GlobalStyle />
     {storyFn()}
   </>
 );
-
-export default GlobalStyleDecorator;
